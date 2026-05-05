@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empleados | RRHH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="min-h-screen px-6 py-12">
+    <header class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">RRHH</p>
+        <h1 class="text-3xl font-semibold">Empleados</h1>
+        <p class="text-slate-600 mt-2">Administra altas, cambios y bajas.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="employee-new.html"
+          class="rounded-xl bg-slate-900 text-white px-4 py-2 font-medium hover:bg-black transition">
+          Nuevo empleado
+        </a>
+        <button id="logout-btn"
+          class="rounded-xl border border-slate-200 px-4 py-2 font-medium text-slate-700 hover:border-slate-300 transition">
+          Cerrar sesion
+        </button>
+      </div>
+    </header>
+
+    <section class="mt-8 grid gap-6">
+      <div class="card rounded-2xl p-6 fade-in">
+        <form id="search-form" class="flex flex-col gap-3 md:flex-row">
+          <input id="search-name" type="text" placeholder="Buscar por nombre exacto"
+            class="flex-1 rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-slate-900" />
+          <button type="submit"
+            class="rounded-xl bg-slate-900 text-white px-4 py-2.5 font-medium hover:bg-slate-800 transition">
+            Buscar
+          </button>
+          <button type="button" id="clear-search"
+            class="rounded-xl border border-slate-200 px-4 py-2.5 font-medium text-slate-700 hover:border-slate-300 transition">
+            Ver todos
+          </button>
+        </form>
+        <div id="message" class="text-sm text-slate-600 mt-3 min-h-[20px]"></div>
+      </div>
+
+      <div class="card rounded-2xl p-6 fade-in stagger-1">
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-left text-sm">
+            <thead class="text-slate-500">
+              <tr>
+                <th class="pb-3">ID</th>
+                <th class="pb-3">Nombre</th>
+                <th class="pb-3">Apellidos</th>
+                <th class="pb-3">Telefono</th>
+                <th class="pb-3">Correo</th>
+                <th class="pb-3">Direccion</th>
+                <th class="pb-3">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="employee-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/employees.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo empleado | RRHH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="min-h-screen px-6 py-12">
+    <header class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">RRHH</p>
+        <h1 class="text-3xl font-semibold">Nuevo empleado</h1>
+        <p class="text-slate-600 mt-2">Registra un nuevo empleado en la base.</p>
+      </div>
+      <a href="employees.html"
+        class="rounded-xl border border-slate-200 px-4 py-2 font-medium text-slate-700 hover:border-slate-300 transition">
+        Volver
+      </a>
+    </header>
+
+    <section class="mt-8 max-w-2xl mx-auto">
+      <div class="card rounded-2xl p-6 fade-in">
+        <form id="employee-form" class="grid gap-4 md:grid-cols-2">
+          <div>
+            <label class="text-sm text-slate-600">Nombre</label>
+            <input id="emp-name" type="text"
+              class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              required />
+          </div>
+          <div>
+            <label class="text-sm text-slate-600">Apellidos</label>
+            <input id="emp-lastname" type="text"
+              class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              required />
+          </div>
+          <div>
+            <label class="text-sm text-slate-600">Telefono</label>
+            <input id="emp-phone" type="text"
+              class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              required />
+          </div>
+          <div>
+            <label class="text-sm text-slate-600">Correo</label>
+            <input id="emp-email" type="email"
+              class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              required />
+          </div>
+          <div class="md:col-span-2">
+            <label class="text-sm text-slate-600">Direccion</label>
+            <input id="emp-address" type="text"
+              class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              required />
+          </div>
+          <div id="message" class="text-sm text-slate-700 min-h-[20px] md:col-span-2"></div>
+          <div class="md:col-span-2 flex flex-wrap gap-3">
+            <button type="submit"
+              class="rounded-xl bg-slate-900 text-white px-4 py-2.5 font-medium hover:bg-black transition">
+              Guardar empleado
+            </button>
+            <a href="employees.html"
+              class="rounded-xl border border-slate-200 px-4 py-2.5 font-medium text-slate-700 hover:border-slate-300 transition">
+              Cancelar
+            </a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/employee-new.js"></script>
+</body>
+
+</html>
