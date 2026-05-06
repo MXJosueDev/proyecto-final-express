@@ -19,6 +19,8 @@ services:
       - "${PORT}:3000"
     depends_on:
       - db
+    restart: on-failure
+    
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.2
     environment:
@@ -28,12 +30,15 @@ services:
       - "${PMA_WEB_PORT}:80"
     depends_on:
       - db
+    
   web:
     image: nginx:alpine
     ports:
       - "${WEB_PORT}:80"
     volumes:
       - ./public:/usr/share/nginx/html:ro
+    depends_on:
+      - api
 
 volumes:
   db_data: 

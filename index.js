@@ -18,7 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors);
 
 app.get("/", index);
-app.use(express.static("public"));
 
 app.use("/user", user);
 
@@ -28,6 +27,7 @@ app.use("/employee", employee);
 app.use(notFound);
 
 const port = process.env.PORT || 3000;
+
 initDb()
   .then(() => {
     app.listen(port, () => {
